@@ -1,3 +1,4 @@
+/*General styles*/
 body {
   font-family: 'Open Sans', sans-serif;
   font-size: 16px;
@@ -20,14 +21,16 @@ textarea{
   border-radius: 0;
   border-bottom: 10px solid black;
 }
+/*block styles*/
 
 .description{
   white-space: pre-wrap;
 }
 
 .time-block{
-  text-align: center;
-  border-radius: 15px;
+  /*text-align: center;*/
+  white-space: pre-wrap;
+  /*border-radius: 15px;*/
 }
 
 .row {
@@ -41,6 +44,8 @@ textarea{
   color: #000000;
   border-top: 1px dashed #000000;
 }
+
+/*diferent timeLine*/
 
 .past {
   background-color: #d3d3d3;
@@ -56,6 +61,8 @@ textarea{
   background-color: #77dd77;
   color: white;
 }
+
+/*SaveBtn Styles*/
 
 .saveBtn {
   border-left: 1px solid black;
