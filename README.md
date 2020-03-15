@@ -3,7 +3,7 @@ Name
 
 "Web APIs (jQuery), "Work Day Scheduler".
 
-![gif](https://carleton.bootcampcontent.com/carleton-university/CARL-OTT-FSF-PT-02-2020-U-C/raw/master/05-Third-Party-APIs/02-Homework/Assets/05-third-party-apis-homework-demo.gif)
+![gif](images/0.gif)
 
 
 instruction 
