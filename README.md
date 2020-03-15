@@ -54,7 +54,7 @@ instruction
 
 Description
 
-"Work Day Scheduler" is an app tha will help you remember and organize your plans during the day. This app will run in the browser and feature dynamically updated HTML and CSS powered by JavaScript (usin jQuery code). It also feature a clean and polished user interface and is responsive, ensuring that it adapts to multiple screen sizes.
+"Work Day Scheduler" is an app tha will help you remember and organize your plans during the day. This app will run in the browser and feature dynamically updated HTML and CSS powered by JavaScript (using jQuery and moment.js code). It also feature a clean and polished user interface and is responsive, ensuring that it adapts to multiple screen sizes.
 like: CellPhones "640px", Tablets "768px", and Laptops "980px".
 
 

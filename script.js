@@ -2,16 +2,11 @@
 //◈◈◈◈◈◈◈◈◈◈◈◈◈◈◈◈◈◈◈◈◈◈◈◈◈◈◈◈◈◈◈◈◈◈◈◈◈◈◈◈-- Home Work 5, Work Day Scheduler --◈◈◈◈◈◈◈◈◈◈◈◈◈◈◈◈◈◈◈◈◈◈◈◈◈◈◈◈◈◈◈
 //◈◈◈◈◈◈◈◈◈◈◈◈◈◈◈◈◈◈◈◈◈◈◈◈◈◈◈◈◈◈◈◈◈◈◈◈◈◈◈◈◈◈◈◈◈◈◈◈◈◈◈◈◈◈◈◈◈◈◈◈◈◈◈◈◈◈◈◈◈◈◈◈◈◈◈◈◈◈◈◈◈◈◈◈◈◈◈◈◈◈◈◈◈◈◈
 
-//Library
-let months = ['January', 'February', 'March', 'April', 'May', 'June', 'July', 'Agust', 'September', 'October', 'November', 'December'];
-let days = ['Sunday', 'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday', 'Sunday'];
-
-//time variables
-let currentDate = new Date();
-let cDate = currentDate.getDate();
-let cMonth = months[currentDate.getMonth()];
-let cDay = days[currentDate.getDay()];
-let cHour = currentDate.getHours();
+//Time variables using "moment.js"
+let cDate = moment().format('Do');
+let cMonth = moment().format('MMMM');
+let cDay = moment().format('dddd');
+let cHour = moment().format('h');
 
 //HTML elements Variables
 let pDay = $('#currentDay');
@@ -23,14 +18,14 @@ let saveBtn = $('.saveBtn');
 //◈◈◈◈◈◈◈◈◈◈◈◈◈◈◈◈◈◈◈◈◈◈◈◈◈◈◈◈◈◈◈◈◈◈◈◈◈◈◈◈◈◈-- Program starts here! --◈◈◈◈◈◈◈◈◈◈◈◈◈◈◈◈◈◈◈◈◈◈◈◈◈◈◈◈◈◈◈◈◈◈◈◈◈◈◈◈◈
 $(document).ready(function () {
     //◅▻◅▻◅▻◅▻◅▻◅▻◅▻◅▻◅▻◅▻◅▻◅▻◅▻◅▻◅▻◅▻◅▻◅▻◅◅▻-- Current Date Display --◅▻◅▻◅▻◅▻◅▻◅▻◅▻◅▻◅▻◅▻◅◅▻◅▻◅▻◅▻◅▻◅▻◅▻◅▻◅▻◅▻
-    $('#currentDay').text(cDay + ', ' + cMonth + ' ' + cDate + 'th');
+    $('#currentDay').text(cDay + ', ' + cMonth + ' ' + cDate);
 
     //◅▻◅▻◅▻◅▻◅▻◅▻◅▻◅▻◅▻◅▻◅▻◅▻◅▻◅▻◅▻◅▻◅▻◅▻◅▻◅▻◅▻-- Color Blocks --◅▻◅▻◅▻◅▻◅▻◅▻◅▻◅▻◅▻◅▻◅▻◅▻◅▻◅▻◅▻◅▻◅▻◅▻◅▻◅▻◅▻◅▻
     $( '.description' ).each(function( i ) {
         if ( i < cHour ) {
             $(Hours[i]).addClass('past');
         } 
-        else if (i === cHour) {
+        else if (i == cHour) {
             $(Hours[i]).addClass('present');
         }
         else {
