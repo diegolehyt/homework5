@@ -6,7 +6,6 @@
 let cDate = moment().format('Do');
 let cMonth = moment().format('MMMM');
 let cDay = moment().format('dddd');
-let cHour = moment().format('h');
 
 //HTML elements Variables
 let pDay = $('#currentDay');
@@ -19,6 +18,9 @@ let saveBtn = $('.saveBtn');
 $(document).ready(function () {
     //◅▻◅▻◅▻◅▻◅▻◅▻◅▻◅▻◅▻◅▻◅▻◅▻◅▻◅▻◅▻◅▻◅▻◅▻◅◅▻-- Current Date Display --◅▻◅▻◅▻◅▻◅▻◅▻◅▻◅▻◅▻◅▻◅◅▻◅▻◅▻◅▻◅▻◅▻◅▻◅▻◅▻◅▻
     $('#currentDay').text(cDay + ', ' + cMonth + ' ' + cDate);
+    //Local time variables
+    let currentDate = new Date();
+    let cHour = currentDate.getHours();
 
     //◅▻◅▻◅▻◅▻◅▻◅▻◅▻◅▻◅▻◅▻◅▻◅▻◅▻◅▻◅▻◅▻◅▻◅▻◅▻◅▻◅▻-- Color Blocks --◅▻◅▻◅▻◅▻◅▻◅▻◅▻◅▻◅▻◅▻◅▻◅▻◅▻◅▻◅▻◅▻◅▻◅▻◅▻◅▻◅▻◅▻
     $( '.description' ).each(function( i ) {
