@@ -1,4 +1,7 @@
-//-----------------------------
+//◈◈◈◈◈◈◈◈◈◈◈◈◈◈◈◈◈◈◈◈◈◈◈◈◈◈◈◈◈◈◈◈◈◈◈◈◈◈◈◈◈◈◈◈◈◈◈◈◈◈◈◈◈◈◈◈◈◈◈◈◈◈◈◈◈◈◈◈◈◈◈◈◈◈◈◈◈◈◈◈◈◈◈◈◈◈◈◈◈◈◈◈◈◈◈
+//◈◈◈◈◈◈◈◈◈◈◈◈◈◈◈◈◈◈◈◈◈◈◈◈◈◈◈◈◈◈◈◈◈◈◈◈◈◈◈◈-- Home Work 5, Work Day Scheduler --◈◈◈◈◈◈◈◈◈◈◈◈◈◈◈◈◈◈◈◈◈◈◈◈◈◈◈◈◈◈◈
+//◈◈◈◈◈◈◈◈◈◈◈◈◈◈◈◈◈◈◈◈◈◈◈◈◈◈◈◈◈◈◈◈◈◈◈◈◈◈◈◈◈◈◈◈◈◈◈◈◈◈◈◈◈◈◈◈◈◈◈◈◈◈◈◈◈◈◈◈◈◈◈◈◈◈◈◈◈◈◈◈◈◈◈◈◈◈◈◈◈◈◈◈◈◈◈
+
 //Library
 let months = ['January', 'February', 'March', 'April', 'May', 'June', 'July', 'Agust', 'September', 'October', 'November', 'December'];
 let days = ['Sunday', 'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday', 'Sunday'];
@@ -17,23 +20,24 @@ let Hours = $('.description');
 //All saveBtns
 let saveBtn = $('.saveBtn');
 
-//---------------------Program starts here!------------------------
+//◈◈◈◈◈◈◈◈◈◈◈◈◈◈◈◈◈◈◈◈◈◈◈◈◈◈◈◈◈◈◈◈◈◈◈◈◈◈◈◈◈◈-- Program starts here! --◈◈◈◈◈◈◈◈◈◈◈◈◈◈◈◈◈◈◈◈◈◈◈◈◈◈◈◈◈◈◈◈◈◈◈◈◈◈◈◈◈
 $(document).ready(function () {
-    //Current Date Display-------------------------------
+    //◅▻◅▻◅▻◅▻◅▻◅▻◅▻◅▻◅▻◅▻◅▻◅▻◅▻◅▻◅▻◅▻◅▻◅▻◅◅▻-- Current Date Display --◅▻◅▻◅▻◅▻◅▻◅▻◅▻◅▻◅▻◅▻◅◅▻◅▻◅▻◅▻◅▻◅▻◅▻◅▻◅▻◅▻
     $('#currentDay').text(cDay + ', ' + cMonth + ' ' + cDate + 'th');
-    //Color Blocks-----------------------------------------
-    for (let i = 0; i < 24 ; i++){
-        if (i < cHour){
-            $('.description')[i].classList.add('past');
-        }
-        else if (i === cHour){
-            $('.description')[i].classList.add('present');
+
+    //◅▻◅▻◅▻◅▻◅▻◅▻◅▻◅▻◅▻◅▻◅▻◅▻◅▻◅▻◅▻◅▻◅▻◅▻◅▻◅▻◅▻-- Color Blocks --◅▻◅▻◅▻◅▻◅▻◅▻◅▻◅▻◅▻◅▻◅▻◅▻◅▻◅▻◅▻◅▻◅▻◅▻◅▻◅▻◅▻◅▻
+    $( '.description' ).each(function( i ) {
+        if ( i < cHour ) {
+            $(Hours[i]).addClass('past');
+        } 
+        else if (i === cHour) {
+            $(Hours[i]).addClass('present');
         }
         else {
-            $('.description')[i].classList.add('future');
+            $(Hours[i]).addClass('future');
         }
-    }
-    //-------------------------------Get Local Storage and Display on Screen----------------------------
+    });
+    //◈◈◈◈◈◈◈◈◈◈◈◈◈◈◈◈◈◈◈◈◈◈◈◈◈◈◈◈◈◈◈◈◈◈-- Get Local Storage and Display on Screen --◈◈◈◈◈◈◈◈◈◈◈◈◈◈◈◈◈◈◈◈◈◈◈◈◈◈◈◈◈◈
     $(Hours[0]).text(localStorage.getItem('12AM'));
     $(Hours[1]).text(localStorage.getItem('1AM'));
     $(Hours[2]).text(localStorage.getItem('2AM'));
@@ -59,7 +63,7 @@ $(document).ready(function () {
     $(Hours[22]).text(localStorage.getItem('10PM'));
     $(Hours[23]).text(localStorage.getItem('11PM'));
 
-    //---------------------------------Save Buttons events-------------------------------------------------
+    //◈◈◈◈◈◈◈◈◈◈◈◈◈◈◈◈◈◈◈◈◈◈◈◈◈◈◈◈◈◈◈◈◈◈◈◈◈◈◈◈-- Save Buttons events --◈◈◈◈◈◈◈◈◈◈◈◈◈◈◈◈◈◈◈◈◈◈◈◈◈◈◈◈◈◈◈◈◈◈◈◈◈◈◈
     //12 AM
     $(saveBtn[0]).on("click", function(){
         if (localStorage.getItem('12AM') === null){
@@ -110,7 +114,7 @@ $(document).ready(function () {
             localStorage.setItem('4AM', $(Hours[4]).text());
         }
     })
-    //5 AM--------------------
+    //5 AM
     $(saveBtn[5]).on("click", function(){
         if (localStorage.getItem('5AM') === null){
             localStorage.setItem('5AM', $(Hours[5]).text());
@@ -301,3 +305,6 @@ $(document).ready(function () {
         }
     })
 })
+//◈◈◈◈◈◈◈◈◈◈◈◈◈◈◈◈◈◈◈◈◈◈◈◈◈◈◈◈◈◈◈◈◈◈◈◈◈◈◈◈◈◈◈◈◈◈◈◈◈◈◈◈◈◈◈◈◈◈◈◈◈◈◈◈◈◈◈◈◈◈◈◈◈◈◈◈◈◈◈◈◈◈◈◈◈◈◈◈◈◈◈◈◈
+//◈◈◈◈◈◈◈◈◈◈◈◈◈◈◈◈◈◈◈◈◈◈◈◈◈◈◈◈◈◈◈◈◈◈◈◈◈◈◈◈◈◈◈◈◈-- END --◈◈◈◈◈◈◈◈◈◈◈◈◈◈◈◈◈◈◈◈◈◈◈◈◈◈◈◈◈◈◈◈◈◈◈◈◈◈◈◈◈◈
+//◈◈◈◈◈◈◈◈◈◈◈◈◈◈◈◈◈◈◈◈◈◈◈◈◈◈◈◈◈◈◈◈◈◈◈◈◈◈◈◈◈◈◈◈◈◈◈◈◈◈◈◈◈◈◈◈◈◈◈◈◈◈◈◈◈◈◈◈◈◈◈◈◈◈◈◈◈◈◈◈◈◈◈◈◈◈◈◈◈◈◈◈◈
